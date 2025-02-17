@@ -1,17 +1,25 @@
-pragma solidity >= 0.7.0 < 0.9.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
 
 contract WelcomeToSolidity {
-   constructor() public{
+
+    uint public _a;
+    uint public _b;
+    
+   constructor(){
+    _a = 14;
+    _b = 1;
    }
    
    // is adding two integers
-   function getResult() public view returns(uint){
-      uint a = 1;
-      uint b = 14;
+   function getResult(uint a , uint b) public pure returns(uint){
       uint result = a + b;
       return result;
    }
+   uint ans = getResult(_a, _b);
+
 }
+
 
 // Exercise: Change the function called getResult in our WelcomeToSolidity contract so that the output
 // returns 15 
